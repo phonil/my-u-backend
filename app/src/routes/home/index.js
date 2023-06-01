@@ -6,7 +6,7 @@ const router = express.Router();
 
 const ctrl = require('./home.ctrl');
 
-// API 모음소인듯..?! get은 get 메소드고..
+// API 모음소인듯..?
 // 여기서 라우팅 하는듯
 router.get('/', ctrl.output.home);
 router.get('/login', ctrl.output.login);

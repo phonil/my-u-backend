@@ -9,33 +9,17 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="containter">
-      <div class="inputContainer">
-        <div class="titleBox">
-          <p class="idTitle">아이디</p>
-          <p class="pwTitle">비밀번호</p>
-        </div>
-        <div class="inputBox">
-          <input
-            id="id"
-            class="idInput"
-            type="text"
-            placeholder="아이디를 입력하세요"
-          />
-          <input
-            id="password"
-            class="pwInput"
-            type="password"
-            placeholder="비밀번호를 입력하세요"
-          />
-        </div>
+    <div class="login-page">
+      <div class="form">
+        <form class="login-form">
+          <input id="id" type="text" placeholder="아이디" />
+          <input id="password" type="password" placeholder="비밀번호" />
+          <p id="button">login</p>
+          <p class="message">
+            Not registered? <a href="/register">Create an account</a>
+          </p>
+        </form>
       </div>
-      <button id="button" class="loginBtn">로그인</button>
-      <!-- <p id="button">로그인</p> -->
-      <!--  -->
-      <p class="message">
-        Not registered? <a href="/register">Create an account</a>
-      </p>
     </div>
   </body>
 </html>
