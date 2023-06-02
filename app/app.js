@@ -6,6 +6,10 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+
+app.use(cors());
+
 // 라우팅
 const home = require('./src/routes/home'); // 이렇게 쓰면 index.js 읽음
 

@@ -1,6 +1,6 @@
 {
   "id": ["admin"],
   "password": ["admin"],
-  "name": ["사용자"],
+  "nickName": ["사용자"],
   "score": [5]
 }

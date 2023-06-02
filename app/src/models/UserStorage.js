@@ -21,6 +21,7 @@ class UserStorage {
 
   static #getUsers(data, isAll, fields) {
     const users = JSON.parse(data);
+    console.log(users); ///////
     if (isAll) return users;
     const newUsers = fields.reduce((newUsers, field) => {
       if (users.hasOwnProperty(field)) {
@@ -50,14 +51,14 @@ class UserStorage {
   }
 
   static async save(userInfo) {
-    const users = await this.getUsers(true); // == 'id', 'password', 'name' 모든 데이터를 가져올 때 대신 true로 사용 가능 --> isAll
+    const users = await this.getUsers(true); // == 'id', 'password', 'nickName' 모든 데이터를 가져올 때 대신 true로 사용 가능 --> isAll
     if (users.id.includes(userInfo.id)) {
       // db에 이미 포함되어 있으면
       throw '이미 존재하는 아이디입니다.';
     }
 
     users.id.push(userInfo.id);
-    users.name.push(userInfo.name);
+    users.nickName.push(userInfo.nickName);
     users.password.push(userInfo.password);
 
     // 데이터 추가
