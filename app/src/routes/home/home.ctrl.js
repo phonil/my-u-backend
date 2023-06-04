@@ -15,6 +15,54 @@ const output = {
 };
 
 const process = {
+  luckydraw: (req, res) => {
+    const random = Math.floor(Math.random() * 5); // 0~4 난수 발생
+    const luck = {
+      result: 0,
+      score: '',
+      msg: '',
+    };
+    switch (random) {
+      case 0:
+        luck.result = 0;
+        luck.score = 'F';
+        luck.msg = '당신의 오늘은 F입니다.';
+        break;
+      case 1:
+        luck.result = 2.0;
+        luck.score = 'C';
+        luck.msg = '당신의 오늘은 C입니다.';
+        break;
+      case 2:
+        luck.result = 3.0;
+        luck.score = 'B';
+        luck.msg = '당신의 오늘은 B입니다.';
+        break;
+      case 3:
+        luck.result = 4.0;
+        luck.score = 'A';
+        luck.msg = '당신의 오늘은 A입니다.';
+        break;
+      case 4:
+        luck.result = 4.5;
+        luck.score = 'A+';
+        luck.msg = '당신의 오늘은 A+입니다.';
+        break;
+    }
+    return res.json(luck);
+  },
+
+  result: async (req, res) => {
+    const client = req.body;
+    const result = {
+      type: '',
+    };
+    if (client.score > 10 && client.score < 20) {
+      result.type = '새내기';
+    }
+    return res.json(result);
+  },
+
   login: async (req, res) => {
     const user = new User(req.body);
     const response = await user.login();
