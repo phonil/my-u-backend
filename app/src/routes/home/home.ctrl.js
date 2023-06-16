@@ -4,7 +4,7 @@ const User = require('../../models/User');
 
 const output = {
   home: (req, res) => {
-    res.render('home/index'); // 위에서 views로 경로 설정했기 때문에 이렇게 하면 됨
+    res.render('home/index'); // 위에서 views로 경로 설정했기 때문
   },
   login: (req, res) => {
     res.render('home/login');
@@ -16,7 +16,7 @@ const output = {
 
 const process = {
   luckydraw: (req, res) => {
-    const random = Math.floor(Math.random() * 5); // 0~4 난수 발생
+    const random = Math.floor(Math.random() * 4); // 0~3 난수 발생
     const luck = {
       result: 0,
       score: '',
@@ -24,26 +24,21 @@ const process = {
     };
     switch (random) {
       case 0:
-        luck.result = 0;
-        luck.score = 'F';
-        luck.msg = '당신의 오늘은 F입니다.';
-        break;
-      case 1:
         luck.result = 2.0;
         luck.score = 'C';
         luck.msg = '당신의 오늘은 C입니다.';
         break;
-      case 2:
+      case 1:
         luck.result = 3.0;
         luck.score = 'B';
         luck.msg = '당신의 오늘은 B입니다.';
         break;
-      case 3:
+      case 2:
         luck.result = 4.0;
         luck.score = 'A';
         luck.msg = '당신의 오늘은 A입니다.';
         break;
-      case 4:
+      case 3:
         luck.result = 4.5;
         luck.score = 'A+';
         luck.msg = '당신의 오늘은 A+입니다.';
@@ -76,30 +71,8 @@ const process = {
   },
 };
 
-// 하나의 객체 안 두 함수를 내보내는 것. / 핵심은 하나의 객체로 내보내는 것
+//  하나의 객체로 내보내는
 module.exports = {
   output,
   process,
 };
-
-// login : {} 속 내용
-// req :: 프론트의 요청 데이터를 담아두는 변수
-// 인증 과정 구현
-// const id = req.body.id;
-// const password = req.body.password;
-
-// const users = UserStorage.getUsers('id', 'password');
-
-// const response = {};
-
-// if (users.id.includes(id)) {
-//   const idx = users.id.indexOf(id);
-//   if (users.password[idx] === password) {
-//     response.success = true;
-//     return res.json(response);
-//   }
-// }
-
-// response.success = false;
-// response.msg = '로그인에 실패하셨습니다.';
-// return res.json(response);

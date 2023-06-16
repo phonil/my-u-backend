@@ -3,7 +3,7 @@
 const fs = require('fs').promises;
 
 class UserStorage {
-  // 유저 id, password --> 이런건 model로 가야 함
+  // 유저 id, password --> 이런건 model로
   // class 안 변수는 const 필요 없음
 
   static #getUserInfo(data, id) {
@@ -21,7 +21,7 @@ class UserStorage {
 
   static #getUsers(data, isAll, fields) {
     const users = JSON.parse(data);
-    console.log(users); ///////
+    console.log(users);
     if (isAll) return users;
     const newUsers = fields.reduce((newUsers, field) => {
       if (users.hasOwnProperty(field)) {
@@ -34,7 +34,7 @@ class UserStorage {
 
   static getUsers(isAll, ...fields) {
     return fs
-      .readFile('./src/databases/Users.json') // 여기서 현재 경로는 app.js가 있는 곳
+      .readFile('./src/databases/Users.json') //  현재 경로는 app.js가 있는 곳
       .then((data) => {
         return this.#getUsers(data, isAll, fields);
       })
@@ -43,7 +43,7 @@ class UserStorage {
 
   static getUserInfo(id) {
     return fs
-      .readFile('./src/databases/Users.json') // 여기서 현재 경로는 app.js가 있는 곳
+      .readFile('./src/databases/Users.json')
       .then((data) => {
         return this.#getUserInfo(data, id);
       })
