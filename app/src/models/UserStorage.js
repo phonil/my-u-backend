@@ -3,9 +3,6 @@
 const fs = require('fs').promises;
 
 class UserStorage {
-  // 유저 id, password --> 이런건 model로
-  // class 안 변수는 const 필요 없음
-
   static #getUserInfo(data, id) {
     const users = JSON.parse(data);
 

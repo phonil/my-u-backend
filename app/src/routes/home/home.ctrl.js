@@ -2,18 +2,6 @@
 
 const User = require('../../models/User');
 
-const output = {
-  home: (req, res) => {
-    res.render('home/index'); // 위에서 views로 경로 설정했기 때문
-  },
-  login: (req, res) => {
-    res.render('home/login');
-  },
-  register: (req, res) => {
-    res.render('home/register');
-  },
-};
-
 const process = {
   luckydraw: (req, res) => {
     const random = Math.floor(Math.random() * 4); // 0~3 난수 발생
@@ -73,6 +61,5 @@ const process = {
 
 //  하나의 객체로 내보내는
 module.exports = {
-  output,
   process,
 };
