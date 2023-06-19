@@ -8,6 +8,13 @@
 
 <br>
 
+[팀 노션 바로가기](https://www.notion.so/8ce3c3bc7e994704aa9f20ab64dfc176?v=0b09360015424035a44a1900b542f6d0)
+<br>
+
+[피그마 확인하기](https://www.figma.com/file/WIF1NJ6wkkv0KnbFUdyF0P/my-u?type=design&node-id=0%3A1&t=8sxkQdmGZrplbnXk-1)
+
+<br>
+
 ### commit message
 
 | 헤더     | 내용                                                                |
